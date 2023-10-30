@@ -1,0 +1,113 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+
+    id 'androidx.navigation.safeargs.kotlin'
+
+
+}
+
+android {
+    namespace 'com.example.myapplication'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 29
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion compose_compiler
+
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.activity:activity:1.8.0"
+
+    //test
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    debugImplementation 'androidx.fragment:fragment-testing:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.6.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+
+
+    //viewmodel
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_livedata"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_livedata"
+
+
+
+    //Coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:version_coroutines")
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+
+
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$version_retrofit"
+    implementation("com.squareup.okhttp3:okhttp: $version_okttp")
+
+
+
+
+    //picasso
+    implementation "com.squareup.picasso:picasso:$version_picasso"
+
+
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$version_hilt"
+    kapt("com.google.dagger:hilt-android-compiler:$version_hilt")
+    implementation "androidx.fragment:fragment-ktx:$version_fragment_ktx"
+
+
+    //navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //roundimage
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //maps
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+
+
+}

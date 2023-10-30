@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.DetailFragment">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapsview"
+        android:layout_width="250dp"
+        android:layout_height="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentdetail_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/fragmentdetail_imageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="232dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragmentdetail_firstNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firstname"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fragmentdetail_gendertxtview"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentdetail_imageView"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/fragmentdetail_lastNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lastname"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/fragmentdetail_firstNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toEndOf="@+id/fragmentdetail_firstNameTextView"
+        app:layout_constraintTop_toTopOf="@id/fragmentdetail_firstNameTextView"
+
+        />
+
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:id="@+id/fragmentdetail_frmlayoutfam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragmentdetail_gendertxtview"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentdetail_firstNameTextView"
+        android:background="@drawable/shape2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fam"
+            android:textSize="14sp"
+            android:textColor="@color/blue"
+            />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:id="@+id/fragmentdetail_frmlayoutBan"
+        android:layout_marginStart="10dp"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentdetail_firstNameTextView"
+        app:layout_constraintBottom_toTopOf="@id/fragmentdetail_gendertxtview"
+        android:background="@drawable/shape1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="@string/ban"
+            android:textColor="@color/pink"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/fragmentdetail_gendertxtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentdetail_firstNameTextView"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/fragmentdetail_phonetxtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phonenumber"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toEndOf="@id/fragmentdetail_gendertxtview"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentdetail_firstNameTextView"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/labeladdress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addresslabel"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentdetail_gendertxtview"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <TextView
+        android:id="@+id/fragmentdetail_addresstxtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labeladdress"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.105"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

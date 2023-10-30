@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="firstname">John</string>
+    <string name="lastname">Doe</string>
+    <string name="phonenumber">123-456-7890</string>
+    <string name="gender">Male</string>
+    <string name="fam">Fam</string>
+    <string name="ban">Ban</string>
+    <string name="addresslabel">ADDRESS</string>
+</resources>
